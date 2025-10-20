@@ -33,11 +33,14 @@ function App() {
   }
 
   return (
-    <ul>
-      {data?.map((x) => (
-        <li key={x.id}>{x.title}</li>
-      ))}
-    </ul>
+    <main>
+      <h1>Web performance test</h1>
+      <ul>
+        {data?.map((x) => (
+          <li key={x.id}>{x.title}</li>
+        ))}
+      </ul>
+    </main>
   );
 }
 
