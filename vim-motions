@@ -1,0 +1,78 @@
+# VIM
+
+## Vim motions
+
+### Horizontal
+
+h - left
+l - right
+
+w, W - jump to beginning of a word/WORD
+b, B - jump to back to the begining of the word/WORD
+e, E - jump to end of a word/WORD
+ge, gE - jump back to the end of the previous word/WORD
+
+f{character} - jump to first instance of a {character} in that line
+F{character} - jump back to first instance of a {character} in that line
+t{character} - jump just before to first instance of a {character} in that line
+T{character} - jump just before back to first instance of a {character} in that line
+
+f{character}; - go to next instance of that character
+f{character}, - go to previous instance of that character
+
+0 - first character in a line
+^ - first non blank cahracter of a line
+$ - end of a line
+g_ - first non blank character at the end of a line
+
+### Vertical
+
+j - up
+k - down
+
+} - jump paragraph down
+{ - jump paragraph up
+CTRL-D - move and scroll half the page down
+CTRL-U - move and scroll half the page up
+
+/{pattern} - search for a pattern forward
+?{pattern} - search for a pattern backward
+n - move to next pattern
+N - move to previous pattern
+
+### File movements
+
+gd - go to deffinition
+gf - go to a file in an import
+
+gg - top of the file
+{line}gg - specific line
+G - enf of a file
+
+ctrl-{ - collapse code block
+ctrl-} - expand code block
+
+### Scrolling
+
+zt - current line to top of screen
+zz - current line to center of screen
+zb - current line to bottom of the screen
+
+## Vim Operations
+
+{operator}{count}{motion}
+
+d - delete
+dG - delete all lines after cursor
+dd - delete entire line
+D - delete in line from the cursor
+d{motion} - deletes based on motion, for example `d2w` deletes 2 words or `dt;` deletes everything up to ;
+
+u - undo
+ctrl-r - redo
+
+f- find
+c - change
+t - until
+
+
