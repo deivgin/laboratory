@@ -1,0 +1,8 @@
+[project]
+name = "kalman-filters"
+version = "0.1.0"
+description = "Visualisation and exploration of different Kalman filter variants"
+requires-python = ">=3.11"
+
+[tool.uv]
+dev-dependencies = []
