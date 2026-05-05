@@ -23,18 +23,18 @@ class KalmanFilter2D:
         self.Q = np.eye(2) * process_variance          # process noise
         self.R = np.array([[measurement_variance]])    # measurement noise
         self.x = np.array([[initial_position], [initial_velocity]])
-        self.P = np.eye(2) * 100.0                     # initial uncertainty
+        self.p = np.eye(2) * 100.0                     # initial uncertainty
 
     def update(self, measurement: float) -> tuple[float, float]:
         # Predict
         self.x = self.F @ self.x
-        self.P = self.F @ self.P @ self.F.T + self.Q
+        self.p = self.F @ self.p @ self.F.T + self.Q
 
         # Update
         y = measurement - (self.H @ self.x)
-        S = self.H @ self.P @ self.H.T + self.R
-        K = self.P @ self.H.T @ np.linalg.inv(S)
+        S = self.H @ self.p @ self.H.T + self.R
+        K = self.p @ self.H.T @ np.linalg.inv(S)
         self.x = self.x + K @ y
-        self.P = (np.eye(2) - K @ self.H) @ self.P
+        self.p = (np.eye(2) - K @ self.H) @ self.p
 
         return float(self.x[0, 0]), float(self.x[1, 0])     # (position, velocity)

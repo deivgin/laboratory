@@ -31,7 +31,10 @@ def main() -> None:
     logger.info("%-6s  %-12s  %-12s  %-12s  %-12s", "Step", "True (m)", "GPS (m)", "1D est (m)", "2D est (m)")
     logger.info("-" * 62)
 
-    true_positions, gps_readings, estimates_1d, estimates_2d = [], [], [], []
+    true_positions: list[float] = []
+    gps_readings: list[float] = []
+    estimates_1d: list[float] = []
+    estimates_2d: list[float] = []
 
     random.seed(7)
     for i in range(1, STEPS + 1):
